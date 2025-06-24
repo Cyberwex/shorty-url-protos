@@ -1,0 +1,16 @@
+syntax =  "proto3";
+
+option go_package = "github.com/Cyberwex/shorty-url-protos/golang/shortener";
+
+service Shortener {
+  rpc Shorten(ShortenRequest) returns (ShortenResponse);
+}
+
+message ShortenRequest {
+  string url = 1;
+}
+
+message ShortenResponse {
+  string short_url = 1;
+  string error = 2;
+}
