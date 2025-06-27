@@ -9,7 +9,7 @@ SERVICE_NAME_HYPHEN=${SERVICE_NAME//_/-}
 PROTO_PATH="./proto/${SERVICE_NAME}"
 GO_OUT_PATH="./golang/${SERVICE_NAME}"
 
-if ! protos -I${PROTO_PATH} ${PROTO_PATH}?*.proto \
+if ! protoc -I${PROTO_PATH} ${PROTO_PATH}/*.proto \
     --go_out=${GO_OUT_PATH} \
     --go_opt=paths=source_relative \
     --go-grpc_out=${GO_OUT_PATH} \
